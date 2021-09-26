@@ -1,0 +1,10 @@
+os: osx
+osx_image: xcode12.5
+language: swift
+script: xcodebuild clean build test -workspace Rop_TestingSample.xcworkspace -scheme "RoP_TestingSample" -sdk iphonesimulator -destination "platform=iOS Simulator,OS=14.4,name=iPhone 11" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
+notifications:
+  email:
+    recipients:
+        - rohitpradhan60@gmail.com
+    template:
+        - "%{repository_slug}#%{build_number} (%{branch} - %{commit} : %{author}): %{message}"
